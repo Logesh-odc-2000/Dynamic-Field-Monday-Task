@@ -13,7 +13,7 @@ export default function Calender() {
 
     return (
         <>
-        <div class=" mx-auto max-w-7xl   lg:pt-6 "
+        <div className=" mx-auto max-w-7xl   lg:pt-6 "
          style={{ height: "auto !important;" }}>
             <div classNameName="mx-auto  border  rounded-lg mt-12 grid max-w-2xl grid-cols-1 gap-y-8 gap-x-6 text-gray-6 sm:grid-cols-6">
             <Formik 
@@ -50,31 +50,32 @@ export default function Calender() {
                 
                 <Form>
                 <div className=" sm:col-span-3">
-                    <label for="title" classNameName="block text-sm font-medium text-gray-7">Event Title</label>
+                    <label classNameName=" text-sm font-medium text-gray-500">Event Title</label>
                     <div classNameName="mt-1">
                         <Field type="text" placeholder="Event title goes here..." id="title" name="title"
                        className="block w-full  rounded-md border  py-2 px-3 w-56  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:max-w-lg sm:text-sm"/>
                     </div>
                 </div><br />
                 <div className=" sm:col-span-3">
-                    <label for="location" className="block text-sm font-medium text-gray-7">Event Location</label>
+                    <label className=" text-sm font-medium text-gray-500">Event Location</label>
                     <div className="r   mt-1 ">
                         <Field type="text" id="location" name="location"
                             className="block w-full  rounded-md border  py-2 px-3 w-56  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:max-w-lg sm:text-sm" placeholder="Event location goes here..." />
                     </div>
                 </div>
-                <br/>
-                <div className="sm:col-span-6">
-                    <label for="description" className="block text-sm font-medium text-gray-7">Event Description</label>
-                    <div className="mt-1">
-                        <Field type='textarea' placeholder="Add description here..." id="description" name="description"
-                           rows='5' className="block w-full  rounded-md border  py-2 px-3 w-56 row-5  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:max-w-lg sm:text-sm"/>
+                <br />
+                <div className=" sm:col-span-3">
+                    <label className=" text-sm font-medium text-gray-500">Event Description</label>
+                    <div className="r   mt-1 ">
+                        <Field type="text" id="location" name="description"
+                            className="block w-full  rounded-md border  py-2 px-3 w-56  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:max-w-lg sm:text-sm" placeholder="Event location goes here..." />
                     </div>
-                </div><br />
+                </div>
+                <br/>
                 <div className="sm:col-span-6 sm:max-w-lg">
-                    <label for="timezone" className="block text-sm font-medium text-gray-7">Timezone</label>
+                    <label for="timezone" className="block text-sm font-medium text-gray-500">Timezone</label>
                     <div className="mt-1">
-                        <select id="timezone" name="timezone" className="block w-full px-3 py-2 rounded-md border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm">
+                        <select  id="timezone" name="timezone" className="block w-full px-3 py-2 rounded-md border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm">
                             <option value="Pacific/Niue">(GMT-11:) Niue Time</option>
                             <option value="Pacific/Pago_Pago">(GMT-11:) Samoa Standard Time</option>
                             <option value="Pacific/Rarotonga">(GMT-10:) Cook Islands Standard Time</option>
@@ -97,18 +98,20 @@ export default function Calender() {
                 <div className="sm:col-span-6">
                     <div className="flex items-center">
                         
-                        <div className="flex h-5 items-center">
-                            <Field type="checkbox" id="allDay" name="allDay" className="h-4 w-4 rounded border-gray-3 text-indigo-6 focus:ring-indigo-5"/>
+                        <div  className="flex h-5  items-center">
+                            <Field type="checkbox" id="allDay"  name="allDay" 
+                             className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"/>
                         </div>
                         <div className="ml-3 text-sm">
-                            <label for="allDay" className="font-medium text-gray-7">All Day Event</label>
+                            <label for="allDay" className="font-medium text-gray-500">All Day Event</label>
                             <span className="ml-3 text-gray-5">Is this an all day event?</span>
                         </div>
                     </div>
-                </div><br />
+                </div>
+                <br />
                 <div className="flex gap-x-4 sm:col-span-6">
                     <div className="w-1/2 max-w-[12rem]">
-                        <label for="startDay" className="block text-sm font-medium text-gray-7">Start Date</label>
+                        <label for="startDay" className="block text-sm font-medium text-gray-500">Start Date</label>
                         <div className="mt-1 flex rounded-md bg-white shadow-sm">
                             <select className="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" style={{ backgroundImage: "none", paddingRight: "0.75rem" }} name="startMonth">
                                 <option value="1">Jan</option>
@@ -183,11 +186,11 @@ export default function Calender() {
                             </select>
                         </div>
                     </div>
-                    {values.allDay && Time.map((x,i)=>(
-                    <div class="w-1/2 max-w-[12rem]">
-                        <label for="startHour" class="block text-sm font-medium text-gray-7">Start Time</label>
-                        <div class="mt-1 flex rounded-md bg-white shadow-sm">
-                            <select class="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startHour" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                    {values.allDay ?values.allDay :Time.map((x,i)=>(
+                    <div className="w-1/2 max-w-[12rem]">
+                        <label for="startHour" className="block text-sm font-medium text-gray-500">Start Time</label>
+                        <div className="mt-1 flex rounded-md bg-white shadow-sm">
+                            <select className="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startHour" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="12">1</option>
                                 <option value="12">2</option>
                                 <option value="12">3</option>
@@ -201,7 +204,7 @@ export default function Calender() {
                                 <option value="12">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <select class="relative -ml-px block w-1/3 rounded-none border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startMinute" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                            <select className="relative -ml-px block w-1/3 rounded-none border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startMinute" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="0">1</option>
                                 <option value="0">2</option>
                                 <option value="0">3</option>
@@ -263,7 +266,7 @@ export default function Calender() {
                                 <option value="0">59</option>
                                 <option value="0">60</option>
                             </select>
-                            <select class="relative -ml-px block w-1/3 rounded-none rounded-r-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startMeridem" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                            <select className="relative -ml-px block w-1/3 rounded-none rounded-r-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="startMeridem" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="am">am</option>
                                 <option value="am">pm</option>
                             </select>
@@ -273,7 +276,7 @@ export default function Calender() {
                 </div><br />
                 <div className="flex gap-x-4 sm:col-span-6">
                     <div className="w-1/2 max-w-[12rem]">
-                        <label for="endDay" className="block text-sm font-medium text-gray-7">End Date</label>
+                        <label for="endDay" className="block text-sm font-medium text-gray-500">End Date</label>
                         <div className="mt-1 flex rounded-md bg-white shadow-sm">
                             <select className="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" style={{ backgroundImage: "none", paddingRight: "0.75rem" }} name="endMonth">
                                 <option value="1">Jan</option>
@@ -306,7 +309,7 @@ export default function Calender() {
                                 <option value='14'>14</option>
                                 <option value='15'>15</option>
                                 <option value='16'>16</option>
-                                <option  value='17'>17</option>
+                                <option selected value='17'>17</option>
                                 <option value='18'>18</option>
                                 <option selected value='19'>19</option>
                                 <option value='20'>20</option>
@@ -347,11 +350,11 @@ export default function Calender() {
                             </select>
                         </div>
                     </div>
-                    {values.allDay && Time.map((x,i)=>(
-                    <div class="w-1/2 max-w-[12rem]">
-                        <label for="endHour" class="block text-sm font-medium text-gray-7">End Time</label>
-                        <div class="mt-1 flex rounded-md bg-white shadow-sm">
-                            <select class="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endHour" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                    {values.allDay?values.allDay : Time.map((x,i)=>(
+                    <div className="w-1/2 max-w-[12rem]">
+                        <label for="endHour" className="block text-sm font-medium text-gray-500">End Time</label>
+                        <div className="mt-1 flex rounded-md bg-white shadow-sm">
+                            <select className="relative block w-1/3 rounded-none rounded-l-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endHour" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="12">1</option>
                                 <option value="12">2</option>
                                 <option value="12">3</option>
@@ -365,7 +368,7 @@ export default function Calender() {
                                 <option value="12">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <select class="relative -ml-px block w-1/3 rounded-none border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endMinute" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                            <select className="relative -ml-px block w-1/3 rounded-none border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endMinute" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="0">1</option>
                                 <option value="0">2</option>
                                 <option value="0">3</option>
@@ -427,7 +430,7 @@ export default function Calender() {
                                 <option value="0">59</option>
                                 <option value="0">60</option>
                             </select>
-                            <select class="relative -ml-px block w-1/3 rounded-none rounded-r-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endMeridem" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
+                            <select className="relative -ml-px block w-1/3 rounded-none rounded-r-md border-gray-3 bg-transparent text-center font-medium focus:z-10 focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm" name="endMeridem" style={{ backgroundImage: "none", paddingRight: "0.75rem" }}  >
                                 <option value="am">am</option>
                                 <option value="am">pm</option>
                             </select>
@@ -435,40 +438,41 @@ export default function Calender() {
                     </div>
                      ))}
                 </div>
-               
-                <div class="mt-6 sm:col-span-6">
-                    <h3 class="text-2xl font-extrabold leading-10 tracking-tight text-gray-9">Calendar Links</h3>
-                    <div class="border-b border-gray-200">
-                        <nav class="-mb-px flex space-x-9">
-                            <button type="button"  className="group inline-flex items-center border-b-2 border-transparent py-4 px-1 text-sm font-medium  border-indigo-500 text-indigo-600">
-                                <img alt="Google Calendar" src="icons8-google-calendar-48.png" className="-ml-0.5 mr-2 h-5 w-5 text-indigo-500"></img>
-                                <span>Google Calendar</span>
-                            
-                            </button>
-                            <button type="button" className="group inline-flex items-center border-b-2 border-transparent py-4 px-1 text-sm font-medium  cursor-pointer text-gray-500 hover:border-gray-300 hover:text-gray-700 ">
-                                <img alt="Microsoft Outlook" src="icons8-microsoft-outlook-48.png" classNam="-ml-0.5 mr-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"/>
-                                <span>Microsoft Outlook</span>
-                            </button>
-                            <button type="button" value='office'  className="group inline-flex items-center border-b-2 border-transparent py-4 px-1 text-sm font-medium  cursor-pointer text-gray-500 hover:border-gray-300 hover:text-gray-700 ">
-                                <img alt="Office 365" src="icons8-microsoft-office-2019-48.png" class="-ml-0.5 mr-2 h-5 w-5 text-gray-400 group-hover:text-gray-500"/>
-                                <span>Office 365</span>
-                            </button>
-                            <button type="button" className="group inline-flex items-center border-b-2 border-transparent py-4 px-1 text-sm font-medium   text-indigo-600">
-                                <img alt="Yahoo! Calendar" src="icons8-yahoo-48.png " class="-ml-0.5 mr-2 h-5 w-5 "/>
-                                <span>Yahoo! Calendar</span>
-                            </button>
-                        </nav>
-                    </div>
-                </div>
-              
                 <div class="grid grid-cols-1 gap-y-6 gap-x-4 pt-8 sm:grid-cols-6">
-                    <div class="col-span-full block text-sm font-medium text-red-500">The event's start date you've selected is in the past</div>
                     <div class="sm:col-span-5">
-                        <label class="block text-sm font-medium text-gray-700">Add to Calendar</label>
+                        <label class="block text-sm font-medium text-gray-500">Google Calendar</label>
                         <div class="mt-1 flex rounded-md shadow-sm">
                             <div class="relative flex flex-grow items-stretch focus-within:z-10">
-                                <Field  type="text"  className="block w-full  rounded-md border  py-2 px-3 w-56  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:max-w-lg sm:text-sm" 
-                            value=  {`https://pay?pa=${values.title}@${values.location}&pn=@${values.description}&am=100&tn=dadsadsa&cu=INR`}  /> 
+                                <Field  type="text"  className=" w-full  rounded-md border  py-2 px-3  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm"
+                            value={`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221010%2F20221011${values.title}/%${values.location}&/${values.description}`} /> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-5">
+                        <label class="block text-sm font-medium text-gray-500">Microsoft Outlook Calendar</label>
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <div class="relative flex flex-grow items-stretch focus-within:z-10">
+                                <Field  type="text"  className=" w-full  rounded-md border  py-2 px-3  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm"
+                            value={`https://outlook.live.com/calendar/0/deeplink/compose?allday=false&path=%2Fcalendar%${values.title}%${values.location}&${values.description}`} /> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-5">
+                        <label class="block text-sm font-medium text-gray-500">Office 365 Calendar</label>
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <div class="relative flex flex-grow items-stretch focus-within:z-10">
+                                <Field  type="text"  className=" w-full  rounded-md border  py-2 px-3  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm"
+                                value={`https://office.live.com/calendar/0/deeplink/compose?allday=false&path=%2Fcalendar%${values.title}%${values.location}&${values.description}`} 
+                                 /> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sm:col-span-5">
+                        <label class="block text-sm font-medium text-gray-500">Yahoo! Calendar Calendar</label>
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <div class="relative flex flex-grow items-stretch focus-within:z-10">
+                                <Field  type="text"  className=" w-full  rounded-md border  py-2 px-3  border-gray-3 font-medium shadow-sm focus:border-indigo-5 focus:ring-indigo-5 sm:text-sm"
+                            value={`https://calendar.yahoo.com/?dur=&et=20221010T110000Z&20221010=sxscsacc${values.title}&${values.location}&${values.description}`} /> 
                             </div>
                         </div>
                     </div>
